@@ -12,14 +12,12 @@ import java.time.format.FormatStyle;
 
 public class Main {
     public static void main(String[] args) {
-
-        System.out.println(getDate());
-
+        System.out.println(getDate("2023-03-01T13:00:00Z"));
     }
 
-    public static String getDate() {
-        OffsetDateTime input = OffsetDateTime.parse("2023-03-01T13:00:00Z");
-        return input.format(DateTimeFormatter.ofLocalizedDate(FormatStyle.LONG));
+    public static String getDate(String input) {
+        OffsetDateTime dateTime = OffsetDateTime.parse(input);
+        return dateTime.format(DateTimeFormatter.ofLocalizedDate(FormatStyle.LONG));
     }
 
 }
